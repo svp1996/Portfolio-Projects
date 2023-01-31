@@ -1,0 +1,199 @@
+SELECT * FROM tutorial.billboard_top_100_year_end
+  
+  SELECT *
+  FROM tutorial.billboard_top_100_year_end
+ ORDER BY year DESC, year_rank
+ 
+ SELECT * 
+ FROM tutorial.billboard_top_100_year_end
+ WHERE "group" LIKE 'Snoop%';
+ 
+ SELECT * 
+ FROM tutorial.billboard_top_100_year_end
+ WHERE artist ILIKE 'dr_ke'
+ 
+ SELECT *
+  FROM tutorial.billboard_top_100_year_end
+ WHERE "group" ilike '%ludacris%'
+
+SELECT * 
+FROM tutorial.billboard_top_100_year_end
+WHERE "group" LIKE 'DJ%'
+
+SELECT *
+  FROM tutorial.billboard_top_100_year_end
+ WHERE year_rank IN (1, 2, 3)
+ 
+ SELECT *
+  FROM tutorial.billboard_top_100_year_end
+ WHERE artist IN ('Taylor Swift', 'Usher', 'Ludacris')
+ 
+ SELECT *
+  FROM tutorial.billboard_top_100_year_end
+ WHERE "group" IN ('M.C. Hammer', 'Hammer', 'Elvis Presley')
+ 
+ SELECT *
+  FROM tutorial.billboard_top_100_year_end
+ WHERE year_rank BETWEEN 5 AND 10
+ 
+ SELECT *
+  FROM tutorial.billboard_top_100_year_end
+ WHERE year_rank >= 5 AND year_rank <= 10
+ 
+ SELECT *
+  FROM tutorial.billboard_top_100_year_end
+ WHERE year BETWEEN 1985 AND 1990
+ 
+ SELECT *
+  FROM tutorial.billboard_top_100_year_end
+ WHERE artist IS NULL
+ 
+ SELECT *
+  FROM tutorial.billboard_top_100_year_end
+ WHERE song_name IS NULL
+ 
+ SELECT *
+  FROM tutorial.billboard_top_100_year_end
+ WHERE year = 2012 AND year_rank <= 10
+ 
+ SELECT *
+  FROM tutorial.billboard_top_100_year_end
+ WHERE year = 2012
+   AND year_rank <= 10
+   AND "group" ILIKE '%feat%'
+   
+   SELECT *
+  FROM tutorial.billboard_top_100_year_end
+ WHERE year_rank <= 10
+   AND "group" ILIKE '%ludacris%'
+   
+  SELECT *
+  FROM tutorial.billboard_top_100_year_end
+ WHERE year_rank IN (1, 2, 3)
+ 
+ SELECT * 
+  FROM tutorial.billboard_top_100_year_end
+WHERE artist IN ('Taylor Swift', 'Usher', 'Ludcaris')
+
+SELECT * 
+  FROM tutorial.billboard_top_100_year_end
+  WHERE "group" IN ('M.C. Hammer', 'Hammer', 'Elvis Presley')
+  
+SELECT * 
+  FROM tutorial.billboard_top_100_year_end
+WHERE year_rank >= 5 AND year_rank <= 10
+
+Select * 
+  FROM tutorial.billboard_top_100_year_end
+WHERE year BETWEEN 1985 AND 1990
+
+  SELECT *
+    FROM tutorial.billboard_top_100_year_end
+  WHERE artist ISNULL
+  
+SELECT * 
+  FROM tutorial.billboard_top_100_year_end
+WHERE song_name ISNULL
+
+SELECT *
+  FROM tutorial.billboard_top_100_year_end
+WHERE year = 2012 AND year_rank <= 10
+
+SELECT * 
+  FROM tutorial.billboard_top_100_year_end
+WHERE year = 2012
+  AND year_rank <= 10
+  AND "group" ILIKE '%feat%'
+  
+SELECT * 
+  FROM tutorial.billboard_top_100_year_end
+WHERE year_rank <= 10
+  AND "group" ILIKE '%ludacris%'
+
+SELECT *
+  FROM tutorial.billboard_top_100_year_end
+WHERE year BETWEEN 1960 AND 1969
+  AND Song_name ILIKE '%love%'
+  
+  SELECT * 
+    FROM tutorial.billboard_top_100_year_end
+  WHERE year_rank = 5 OR artist = 'Gotye'
+  
+  SELECT *
+    FROM tutorial.billboard_top_100_year_end
+  WHERE year = 2013
+  AND ("group" ILIKE '%macklemore%' OR "group" ILIKE '%timberlake%')
+  
+  SELECT *
+  FROM tutorial.billboard_top_100_year_end
+  WHERE year_rank <= 10
+    AND ("group" ILIKE '%katy perry%' OR "group" ILIKE '%bon jovi%');
+    
+SELECT *
+FROM tutorial.billboard_top_100_year_end
+WHERE song_name LIKE '%California%'
+  AND (year BETWEEN 1970 AND 1979 OR year BETWEEN 1990 AND 1999);
+  
+SELECT *
+  FROM tutorial.billboard_top_100_year_end
+ WHERE "group" ILIKE '%dr. dre%'
+   AND (year <= 2000 OR year >= 2010)
+  
+SELECT *
+  FROM tutorial.billboard_top_100_year_end
+ WHERE year = 2013
+   AND year_rank NOT BETWEEN 2 AND 3
+   
+SELECT * 
+  FROM tutorial.billboard_top_100_year_end
+  WHERE year = 2013
+  AND "group" NOT ILIKE '%Macklemore%';
+  
+SELECT * 
+  FROM tutorial.billboard_top_100_year_end
+  WHERE year = 2013
+  AND artist IS NOT NULL;
+  
+SELECT * 
+FROM tutorial.billboard_top_100_year_end
+WHERE song_name NOT ILIKE '%A%'
+AND year = 2013;
+
+SELECT *
+  FROM tutorial.billboard_top_100_year_end
+ ORDER BY artist
+
+SELECT * 
+FROM tutorial.billboard_top_100_year_end
+ORDER BY year_rank DESC;
+
+SELECT * 
+FROM  tutorial.billboard_top_100_year_end
+WHERE year = 2012
+ORDER BY SONG_NAME DESC;
+
+SELECT *
+  FROM tutorial.billboard_top_100_year_end
+  WHERE year_rank <= 3
+  ORDER BY year DESC, year_rank
+  
+SELECT *
+  FROM tutorial.billboard_top_100_year_end
+ WHERE year_rank <= 3
+ ORDER BY year_rank, year DESC  
+ 
+ SELECT *
+  FROM tutorial.billboard_top_100_year_end
+ WHERE year_rank <= 3
+ ORDER BY 2, 1 DESC
+ 
+ SELECT *
+  FROM tutorial.billboard_top_100_year_end
+ WHERE year = 2010
+ ORDER BY year_rank, artist
+        
+SELECT * 
+FROM tutorial.billboard_top_100_year_end
+WHERE year IN (2013, 2003, 1993) --Select the relevant years
+AND year_rank BETWEEN 10 and 20 --Limit the rank to 10-20
+ORDER BY year, year_rank
