@@ -127,3 +127,43 @@ SELECT year,
     GROUP BY year, month
     HAVING MAX(High) > 400
     ORDER BY year, month
+
+----------------------------DISTINCT QUERY----------------------------
+
+SELECT DISTINCT month 
+  FROM tutorial.aapl_historical_stock_price
+  
+SELECT DISTINCT year, month
+  FROM tutorial.aapl_historical_stock_price
+  
+SELECT DISTINCT year 
+  FROM tutorial.aapl_historical_stock_price
+  ORDER BY year
+  
+/* Find distinct values in the month column */
+
+SELECT COUNT(DISTINCT month) AS unique_months
+  FROM tutorial.aapl_historical_stock_price
+
+/* Obsereve the average trade volume by month in highest to smallest volumn  */
+ SELECT month,
+       AVG(volume) AS avg_trade_volume
+  FROM tutorial.aapl_historical_stock_price
+ GROUP BY month
+ ORDER BY 2 DESC
+ 
+ /* Create a query that counts the number of unique values in the month column
+ for each year */
+SELECT year,
+       COUNT(DISTINCT month) AS months_count
+  FROM tutorial.aapl_historical_stock_price
+ GROUP BY year
+ ORDER BY year
+ 
+ /* Create a query that separately counts the number of unique values
+ in the month column and the number of unique values in the 'year' 
+ column */ 
+ SELECT COUNT (DISTINCT year) AS years_count,
+        COUNT (DISTINCT month) AS months_count
+      FROM tutorial.aapl_historical_stock_price
+      
