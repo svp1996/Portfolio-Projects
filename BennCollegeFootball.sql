@@ -159,3 +159,52 @@ SELECT CASE WHEN school_name < 'n' THEN 'A-M'
           FROM benn.college_football_players
           GROUP BY 1
           
+/* USING JOINS WITH DATA */
+
+/* Explore which conference has the highest avg weight,
+use JOIN to connect both tables */
+
+SELECT teams.conference AS conference,
+       AVG(players.weight) AS average_weight
+  FROM benn.college_football_players players
+  JOIN benn.college_football_teams teams
+    ON teams.school_name = players.school_name
+ GROUP BY teams.conference
+ ORDER BY AVG(players.weight) DESC
+ 
+/* Create a query that selects the school name, player name, position and weight
+for every player in Georgia, ordered by weight DESC */
+SELECT players.school_name, 
+       players.player_name,
+       players.position,
+       players.weight 
+    FROM benn.college_football_players players
+    WHERE players.state = 'GA'
+    ORDER BY players.weight DESC
+
+/* Join the players and teams table */
+SELECT *
+  FROM benn.college_football_players players
+  JOIN benn.college_football_teams teams
+    ON teams.school_name = players.school_name
+
+/* Join players and teams tables, differentiate the tables */
+SELECT players.school_name AS players_school_name,
+       teams.school_name AS teams_school_name
+  FROM benn.college_football_players players
+  JOIN benn.college_football_teams teams
+    ON teams.school_name = players.school_name
+    
+/* Create a join to display player name, school name and conference 
+in FBS division I-A teams */
+SELECT players.player_name,
+       players.school_name,
+       teams.conference 
+    FROM benn.college_football_players players
+    JOIN benn.college_football_teams teams
+    ON teams.school_name = players.school_name 
+    WHERE teams.division = 'FBS (Division I-A Teams)' 
+    
+
+    
+    
